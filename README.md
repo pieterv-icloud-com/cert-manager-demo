@@ -1,6 +1,6 @@
 # cert-manager demo
 
-## Install kind
+## Create kind cluster
 
 Check this [article](https://dustinspecker.com/posts/test-ingress-in-kind/)
 
@@ -24,21 +24,21 @@ helm install cert-manager jetstack/cert-manager --namespace cert-manager --creat
 ## Install self-signed issuer
 
 ```bash
-kubectl apply -f cert-manager/selfsigned-issuer.yaml
+kubectl apply --filename cert-manager/selfsigned-issuer.yaml
 ```
 
 ## kuard application
 
 ```bash
-kubectl apply -f https://netlify.cert-manager.io/docs/tutorials/acme/example/deployment.yaml
+kubectl apply --filename https://netlify.cert-manager.io/docs/tutorials/acme/example/deployment.yaml
 
-kubectl apply -f https://netlify.cert-manager.io/docs/tutorials/acme/example/service.yaml
+kubectl apply --filename https://netlify.cert-manager.io/docs/tutorials/acme/example/service.yaml
 ```
 
 ## kuard ingress
 
 ```bash
-kubectl create -f kuard-ingress.yaml
+kubectl apply --filename kuard-ingress.yaml
 ```
 
 ## IP for host
@@ -160,7 +160,7 @@ var pageContext = {"hostname":"kuard-5cd5556bc9-c9xsj","addrs":["10.244.0.11"],"
 ## Create a certificate
 
 ```bash
-kubectl apply -f certificate.yaml
+kubectl apply --filename certificate.yaml
 
 kubectl describe certificate example2-com
 ```
