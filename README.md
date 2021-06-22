@@ -24,11 +24,6 @@ helm repo add jetstack https://charts.jetstack.io
 
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --version v1.4.0 --set installCRDs=true
 ```
-## Install self-signed issuer
-
-```bash
-kubectl apply --filename cert-manager/selfsigned-issuer.yaml
-```
 
 ## kuard application
 
@@ -37,7 +32,11 @@ kubectl apply --filename https://netlify.cert-manager.io/docs/tutorials/acme/exa
 
 kubectl apply --filename https://netlify.cert-manager.io/docs/tutorials/acme/example/service.yaml
 ```
+## Install self-signed issuer
 
+```bash
+kubectl apply --filename cert-manager/selfsigned-issuer.yaml
+```
 
 ![cert-manager](diagrams/ingress.drawio.png)
 ## kuard ingress
