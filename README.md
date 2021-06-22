@@ -37,9 +37,9 @@ kubectl apply --filename https://netlify.cert-manager.io/docs/tutorials/acme/exa
 ```bash
 kubectl apply --filename cert-manager/selfsigned-issuer.yaml
 ```
+## kuard ingress
 
 ![cert-manager](diagrams/ingress.drawio.png)
-## kuard ingress
 
 ```bash
 kubectl apply --filename kuard-ingress.yaml
