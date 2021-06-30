@@ -17,7 +17,7 @@ kind create cluster --config kind/kind.yaml --name cert-manager-demo
 ## Install nginx ingress controller
 
 ```bash
-kubectl apply --filename https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 ```
 ## Install cert-manager
 
@@ -45,6 +45,20 @@ kubectl apply --filename cert-manager/selfsigned-issuer.yaml
 
 ```bash
 kubectl apply --filename ingress.yaml
+```
+
+### NOTES
+
+If you receive the following error:
+
+```bash
+error: failed to create ingress: Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding
+```
+
+Run the following:
+
+```bash
+ kubectl delete ValidatingWebhookConfiguration  ingress-nginx-admission
 ```
 
 ## IP for host
