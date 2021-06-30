@@ -6,6 +6,11 @@
 - [Documenation](https://cert-manager.io/docs/)
 - [Let's Encrypt](https://letsencrypt.org)
 - DigiCert [article](https://knowledge.digicert.com/solution/Configure-cert-manager-and-DigiCert-ACME-service-with-Kubernetes.html) to configure cert-manager.
+
+## Demo Application
+
+![cert-manager](diagrams/ingress.drawio.png)
+
 ## Create a kind cluster
 
 Check this [article](https://dustinspecker.com/posts/test-ingress-in-kind/)
@@ -40,8 +45,6 @@ kubectl apply --filename service.yaml
 kubectl apply --filename cert-manager/selfsigned-issuer.yaml
 ```
 ## kuard ingress
-
-![cert-manager](diagrams/ingress.drawio.png)
 
 ```bash
 kubectl apply --filename ingress.yaml
