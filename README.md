@@ -2,7 +2,8 @@
 
 ![cert-manager](diagrams/cert-manager.drawio.png)
 
-**Notes:**
+### Notes
+
 - [Documenation](https://cert-manager.io/docs/)
 - [Let's Encrypt](https://letsencrypt.org)
 - DigiCert [article](https://knowledge.digicert.com/solution/Configure-cert-manager-and-DigiCert-ACME-service-with-Kubernetes.html) to configure cert-manager.
